@@ -16,32 +16,28 @@ The code is organized into three clear parts to make it easy to follow:
 Here I define the main variables used by the program: inventory (a list of dictionaries), clients, and total_sales.
 
 2. Functions (Store Management)
+    
+    - Product Management:
 
-This is where all the logic lives. I created separate functions for each action:
+        - Add products (validating that the price is a number and normalizing the name).
 
-Product Management:
+        - Update stock (controlling that stock cannot go negative).
 
-Add products (validating that the price is a number and normalizing the name).
+        - Remove products safely.
 
-Update stock (controlling that stock cannot go negative).
+    - Visibility & Search:
 
-Remove products safely.
+        - View the inventory with a readable format (currency, separators).
 
-Visibility & Search:
+        - Search for products regardless of whether you use uppercase or lowercase.
 
-View the inventory with a readable format (currency, separators).
+    - Sales Simulation:
 
-Search for products regardless of whether you use uppercase or lowercase.
+        - The make_purchase function uses a while loop to act like a cash register: it asks for products, checks stock, adds them to the cart, and prints the final receipt.
 
-I used .get() to prevent errors if data is missing.
+    - Calculations:
 
-Sales Simulation:
-
-The process_purchase function uses a while loop to act like a cash register: it asks for products, checks stock, adds them to the cart, and prints the final receipt.
-
-Calculations:
-
-Calculate the total accumulated value of the inventory.
+        - Calculate the total accumulated value of the inventory.
 
 3. Test Area
 
@@ -57,11 +53,13 @@ Error Handling: try-except blocks so the program doesn't crash if the user enter
 
 Best Practices:
 
-Data cleaning (.lower(), .strip()).
+    - Data cleaning (.lower(), .strip()).
 
-Defensive programming (checking types with isinstance).
+    - Defensive programming (checking types with isinstance).
 
-Modular code (each function does one thing).
+    - I used .get() to prevent errors if data is missing.
+
+    - Modular code (each function does one thing).
 
 📂 Project Structure
 
